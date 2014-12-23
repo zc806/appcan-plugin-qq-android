@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<uexplugins>
+    <plugin uexName="uexQQ" version="3.0.1" build = "1">
+        <info>1:AndroidManifest.xml中添加必要权限</info>
+        <build>0:QQ登录及分享插件</build>
+    </plugin>
+</uexplugins>

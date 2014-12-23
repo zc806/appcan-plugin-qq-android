@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<uexplugins>
+    <plugin
+        className="org.zywx.wbpalmstar.plugin.uexqq.EUExQQ" uexName="uexQQ" >
+        <method name="login" />
+        <method name="shareWebImgTextToQQ" />
+        <method name="shareLocalImgToQQ" />
+        <method name="shareAudioToQQ" />
+        <method name="shareAppToQQ" />
+        <method name="shareImgTextToQZone" />
+        <method name="sendTextWeibo" />
+    </plugin>
+</uexplugins>
