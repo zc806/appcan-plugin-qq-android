@@ -1,29 +1,29 @@
 package org.zywx.wbpalmstar.plugin.uexqq;
 
+import android.content.Context;
+import android.os.Environment;
+import android.widget.Toast;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-import android.content.Context;
-import android.os.Environment;
-import android.widget.Toast;
-
 public class Utils {
 
     public static String copyImage(Context context, String url) {
-        String resPath = url;// 鑾峰彇鐨勪负assets璺緞
+        String resPath = url;// 获取的为assets路径
         InputStream imageInputStream = null;
         OutputStream out = null;
         String imagTemPath = null;
         try {
             imageInputStream = context.getResources().getAssets()
                     .open(resPath);
-            String sdPath = "";// 涓簊d鍗＄粷瀵硅矾寰�
+            String sdPath = "";// 为sd卡绝对路径
             boolean sdCardExist = Environment.getExternalStorageState().equals(
-                    android.os.Environment.MEDIA_MOUNTED); // 鍒ゆ柇sd鍗℃槸鍚﹀瓨鍦�
+                    android.os.Environment.MEDIA_MOUNTED); // 判断sd卡是否存在
             if (sdCardExist) {
-                sdPath = Environment.getExternalStorageDirectory() + "";// 鑾峰彇鐩綍
+                sdPath = Environment.getExternalStorageDirectory() + "";// 获取目录
             } else {
                 Toast.makeText(context, "sd卡不存在，请查看", Toast.LENGTH_SHORT)
                         .show();
@@ -31,11 +31,11 @@ public class Utils {
             imagTemPath = sdPath + File.separator + resPath;
             File file = new File(imagTemPath);
             if(!file.getParentFile().exists()){
-                file.getParentFile().mkdirs(); 
-            }  
+                file.getParentFile().mkdirs();
+            }
             if(file.exists()){
-                file.delete();  
-            } 
+                file.delete();
+            }
             out = new FileOutputStream(file);
             int count = 0;
             byte[] buff = new byte[1024];
@@ -55,5 +55,5 @@ public class Utils {
         }
         return imagTemPath;
     }
-	
+
 }
